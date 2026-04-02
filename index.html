@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shivnayak Portfolio</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+
+    video {
+      width: 80%;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🎬 Shivnayak Portfolio</h1>
+
+<video controls>
+  <source src="video1.mp4" type="video/mp4">
+</video>
+
+</body>
+</html>
+<h2>Contact Me 📩</h2>
+
+<form onsubmit="sendMsg(event)">
+  <input type="text" placeholder="Your Name" required><br><br>
+  <input type="email" placeholder="Your Email" required><br><br>
+  <textarea placeholder="Your Message" required></textarea><br><br>
+  <button type="submit">Send</button>
+</form>
+
+<script>
+function sendMsg(e){
+  e.preventDefault();
+  alert("Message Sent ✅");
+}
+</script>
