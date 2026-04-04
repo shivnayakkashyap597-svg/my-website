@@ -7,14 +7,6 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<!-- EMAILJS -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-<script>
-(function(){
-  emailjs.init("YOUR_PUBLIC_KEY");
-})();
-</script>
-
 <style>
 body {
   margin: 0;
@@ -98,6 +90,20 @@ footer {
   padding: 15px;
   font-size: 22px;
 }
+
+/* PROFILE PHOTO */
+.profile-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid #38bdf8;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+.profile-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #38bdf8;
+}
 </style>
 </head>
 
@@ -116,11 +122,36 @@ footer {
   <button class="btn" onclick="scrollToSection('projects')">View My Work</button>
 </header>
 
+<!-- ABOUT -->
 <div class="section" id="about">
   <h2>👤 About Me</h2>
-  <p>I create creative and cinematic videos.</p>
+
+  <div class="card" style="max-width:700px; margin:auto; text-align:center;">
+
+    <img src="profile.jpg" alt="Shivnayak" class="profile-img">
+
+    <p>
+      👋 Hey, I'm <b>Shivnayak</b><br><br>
+
+      🎬 A passionate <b>Video Editor & Content Creator</b>  
+      I love turning simple ideas into cinematic visuals.  
+      <br><br>
+
+      💡 Skills:<br>
+      Video Editing | Storytelling | Creativity  
+      <br><br>
+
+      🚀 Goal:<br>
+      To become a professional creator and grow online  
+      <br><br>
+
+      🔥 Learn → Create → Level Up
+    </p>
+
+  </div>
 </div>
 
+<!-- PROJECTS -->
 <div class="section" id="projects">
   <h2>🎬 My Projects</h2>
   <div class="grid">
@@ -131,24 +162,25 @@ footer {
   </div>
 </div>
 
+<!-- SKILLS -->
 <div class="section" id="skills">
   <h2>🛠 Skills</h2>
   <p>Video Editing, Creativity, Storytelling</p>
 </div>
 
+<!-- CONTACT -->
 <div class="section" id="contact">
   <h2>📩 Contact Me</h2>
 
-  <form id="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required><br>
-    <input type="email" name="email" placeholder="Your Email" required><br>
-    <textarea name="message" placeholder="Your Message" required></textarea><br>
+  <form>
+    <input type="text" placeholder="Your Name" required><br>
+    <input type="email" placeholder="Your Email" required><br>
+    <textarea placeholder="Your Message" required></textarea><br>
     <button class="btn">Send</button>
   </form>
 
   <br>
 
-  <!-- EMAIL BUTTON -->
   <a href="mailto:shivnayakkashyap40@gmail.com?subject=Contact%20from%20Website&body=Hello%20Shivnayak" 
   style="background:#3b82f6; color:white; padding:10px 20px; border-radius:20px; text-decoration:none;">
   📧 Send Email
@@ -156,6 +188,7 @@ footer {
 
 </div>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 Shivnayak | All Rights Reserved</p>
 
@@ -174,17 +207,6 @@ footer {
 function scrollToSection(id){
   document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
-
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
-    .then(function() {
-      alert("Message Sent Successfully ✅");
-    }, function(error) {
-      alert("Failed ❌ Try again");
-    });
-});
 </script>
 
 </body>
