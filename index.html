@@ -15,6 +15,7 @@ body {
   color: white;
 }
 
+/* NAVBAR */
 nav {
   background: #020617;
   padding: 15px;
@@ -26,11 +27,14 @@ nav a {
   text-decoration: none;
 }
 
+/* HEADER */
 header {
   text-align: center;
   padding: 80px 20px;
 }
-
+header h1 {
+  font-size: 40px;
+}
 .btn {
   padding: 10px 20px;
   background: #38bdf8;
@@ -39,23 +43,25 @@ header {
   cursor: pointer;
 }
 
+/* SECTIONS */
 .section {
   padding: 40px 20px;
   text-align: center;
 }
 
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 20px;
 }
-
 .card {
   background: #1e293b;
   padding: 20px;
   border-radius: 10px;
 }
 
+/* INPUTS */
 input, textarea {
   width: 80%;
   padding: 10px;
@@ -64,12 +70,14 @@ input, textarea {
   border: none;
 }
 
+/* FOOTER */
 footer {
   background: #020617;
   text-align: center;
   padding: 20px;
 }
 
+/* INSTAGRAM BUTTON */
 .insta-btn {
   display: inline-block;
   margin-top: 10px;
@@ -80,6 +88,7 @@ footer {
   text-decoration: none;
 }
 
+/* WHATSAPP FLOAT */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -109,6 +118,7 @@ footer {
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
@@ -116,6 +126,7 @@ footer {
   <a href="#contact">Contact</a>
 </nav>
 
+<!-- HEADER -->
 <header>
   <h1>Hi, I'm Shivnayak 👋</h1>
   <p>Video Editor & Creator</p>
@@ -125,29 +136,21 @@ footer {
 <!-- ABOUT -->
 <div class="section" id="about">
   <h2>👤 About Me</h2>
-
   <div class="card" style="max-width:700px; margin:auto; text-align:center;">
-
     <img src="profile.jpg" alt="Shivnayak" class="profile-img">
-
     <p>
       👋 Hey, I'm <b>Shivnayak</b><br><br>
-
-      🎬 A passionate <b>Video Editor & Content Creator</b>  
-      I love turning simple ideas into cinematic visuals.  
-      <br><br>
-
-      💡 Skills:<br>
-      Video Editing | Storytelling | Creativity  
-      <br><br>
-
-      🚀 Goal:<br>
-      To become a professional creator and grow online  
-      <br><br>
-
-      🔥 Learn → Create → Level Up
+      🎓 A <b>BCA Student</b> passionate about technology and creativity.<br><br>
+      🎬 I love <b>Video Editing</b> and <b>Photo Editing</b>, creating cinematic content.<br>
+      💻 I am also learning <b>Programming</b> and building projects.<br><br>
+      💡 <b>Skills:</b><br>
+      ✔ Video Editing <br>
+      ✔ Photo Editing <br>
+      ✔ Programming <br>
+      ✔ Creativity <br><br>
+      🚀 <b>Goal:</b> To become a professional creator & grow online.<br><br>
+      🔥 Learn → Create → Improve → Repeat
     </p>
-
   </div>
 </div>
 
@@ -165,33 +168,28 @@ footer {
 <!-- SKILLS -->
 <div class="section" id="skills">
   <h2>🛠 Skills</h2>
-  <p>Video Editing, Creativity, Storytelling</p>
+  <p>Video Editing, Photo Editing, Creativity, Programming</p>
 </div>
 
 <!-- CONTACT -->
 <div class="section" id="contact">
   <h2>📩 Contact Me</h2>
-
   <form>
     <input type="text" placeholder="Your Name" required><br>
     <input type="email" placeholder="Your Email" required><br>
     <textarea placeholder="Your Message" required></textarea><br>
     <button class="btn">Send</button>
   </form>
-
   <br>
-
   <a href="mailto:shivnayakkashyap40@gmail.com?subject=Contact%20from%20Website&body=Hello%20Shivnayak" 
-  style="background:#3b82f6; color:white; padding:10px 20px; border-radius:20px; text-decoration:none;">
+     style="background:#3b82f6; color:white; padding:10px 20px; border-radius:20px; text-decoration:none;">
   📧 Send Email
   </a>
-
 </div>
 
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Shivnayak | All Rights Reserved</p>
-
   <a href="https://instagram.com/smil__e46" target="_blank" class="insta-btn">
     📸 Follow me on Instagram
   </a>
