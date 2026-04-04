@@ -1,45 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Shivnayak Portfolio</title>
-  <style>
-    body {
-      background: black;
-      color: white;
-      text-align: center;
-      font-family: Arial;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivnayak Portfolio</title>
 
-    video {
-      width: 80%;
-      margin-top: 20px;
-      border-radius: 10px;
-    }
-  </style>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI';
+  background: #0f172a;
+  color: white;
+}
+
+/* NAVBAR */
+nav {
+  background: #020617;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+/* HERO */
+header {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+header h1 {
+  font-size: 40px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* SECTION */
+.section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* CONTACT */
+input, textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.6;
+}
+</style>
 </head>
 
 <body>
 
-<h1>🎬 Shivnayak Portfolio</h1>
+<!-- NAVBAR -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-<video controls>
-  <source src="video1.mp4" type="video/mp4">
-</video>
+<!-- HERO -->
+<header>
+  <h1>Hi, I'm Shivnayak 👋</h1>
+  <p>Video Editor & Creator</p>
+  <button class="btn" onclick="scrollToSection('projects')">View My Work</button>
+</header>
 
-</body>
-</html>
-<h2>Contact Me 📩</h2>
+<!-- ABOUT -->
+<div class="section" id="about">
+  <h2>👤 About Me</h2>
+  <p>I create creative and cinematic videos.</p>
+</div>
 
-<form onsubmit="sendMsg(event)">
-  <input type="text" placeholder="Your Name" required><br><br>
-  <input type="email" placeholder="Your Email" required><br><br>
-  <textarea placeholder="Your Message" required></textarea><br><br>
-  <button type="submit">Send</button>
-</form>
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <h2>🎬 My Projects</h2>
+
+  <div class="grid">
+
+    <!-- VIDEO ADDED -->
+    <div class="card">
+      <iframe width="100%" height="200" src="https://www.youtube.com/embed/cowMuJ3sw0Q"></iframe>
+      <p>My Video</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="section" id="skills">
+  <h2>🛠 Skills</h2>
+  <p>Video Editing, Creativity, Storytelling</p>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <h2>📩 Contact Me</h2>
+
+  <form onsubmit="sendMsg(event)">
+    <input type="text" placeholder="Your Name" required><br>
+    <input type="email" placeholder="Your Email" required><br>
+    <textarea placeholder="Your Message" required></textarea><br>
+    <button class="btn">Send</button>
+  </form>
+</div>
+
+<footer>
+  © 2026 Shivnayak Portfolio
+</footer>
 
 <script>
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
 function sendMsg(e){
   e.preventDefault();
   alert("Message Sent ✅");
 }
 </script>
+
+</body>
+</html>
