@@ -5,47 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shivnayak Portfolio</title>
 
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
 body {
   margin: 0;
   font-family: 'Segoe UI';
   background: #0f172a;
   color: white;
- <a href="https://wa.me/918853253719?text=Hello%20Shivnayak" target="_blank"
-style="background:#25D366; color:white; padding:10px 20px; border-radius:20px; text-decoration:none;">
-💬 Contact Me on WhatsApp
-</a>
-  footer {
-  background: #020617;
-  color: #fff;
-  text-align: center;
-  padding: 20px 10px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-    
-}
-
-.footer-content p {
-  margin: 5px 0;
-}
-
-.insta-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #E1306C;
-  color: white;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.insta-btn:hover {
-  background: #c72b60;
-  transform: scale(1.05);
-}
 }
 
 /* NAVBAR */
@@ -54,7 +22,6 @@ nav {
   padding: 15px;
   text-align: center;
 }
-
 nav a {
   color: white;
   margin: 0 15px;
@@ -66,11 +33,9 @@ header {
   text-align: center;
   padding: 80px 20px;
 }
-
 header h1 {
   font-size: 40px;
 }
-
 .btn {
   padding: 10px 20px;
   background: #38bdf8;
@@ -91,7 +56,6 @@ header h1 {
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 20px;
 }
-
 .card {
   background: #1e293b;
   padding: 20px;
@@ -109,9 +73,33 @@ input, textarea {
 
 /* FOOTER */
 footer {
+  background: #020617;
   text-align: center;
   padding: 20px;
-  opacity: 0.6;
+}
+
+/* INSTAGRAM BUTTON */
+.insta-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #E1306C;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 22px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -142,15 +130,11 @@ footer {
 <!-- PROJECTS -->
 <div class="section" id="projects">
   <h2>🎬 My Projects</h2>
-
   <div class="grid">
-
-    <!-- VIDEO ADDED -->
     <div class="card">
       <iframe width="100%" height="200" src="https://www.youtube.com/embed/cowMuJ3sw0Q"></iframe>
       <p>My Video</p>
     </div>
-
   </div>
 </div>
 
@@ -163,7 +147,6 @@ footer {
 <!-- CONTACT -->
 <div class="section" id="contact">
   <h2>📩 Contact Me</h2>
-
   <form onsubmit="sendMsg(event)">
     <input type="text" placeholder="Your Name" required><br>
     <input type="email" placeholder="Your Email" required><br>
@@ -172,9 +155,20 @@ footer {
   </form>
 </div>
 
+<!-- FOOTER -->
 <footer>
-  © 2026 Shivnayak Portfolio
+  <p>© 2026 Shivnayak | All Rights Reserved</p>
+
+  <a href="https://instagram.com/smil__e46" target="_blank" class="insta-btn">
+    📸 Follow me on Instagram
+  </a>
 </footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/918853253719?text=Hello%20Shivnayak" 
+   class="whatsapp-float" target="_blank">
+   <i class="fab fa-whatsapp"></i>
+</a>
 
 <script>
 function scrollToSection(id){
@@ -186,29 +180,6 @@ function sendMsg(e){
   alert("Message Sent ✅");
 }
 </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<div style="text-align:center; margin-top: 20px;">
-  <a href="https://instagram.com/smil__e46" target="_blank" 
-     style="text-decoration:none; background:#E1306C; color:white; padding:10px 20px; border-radius:25px; font-weight:bold;">
-     <i class="fab fa-instagram"></i> Follow me
-  </a>
-</div>
-  <footer>
-  <div class="footer-content">
-    <p>© 2026 Shivnayak | All Rights Reserved</p>
-    
-    <a href="https://instagram.com/smil__e46" target="_blank" class="insta-btn">
-      📸 Follow me on Instagram
-    </a>
-  </div>
-</footer>
-  <!-- WhatsApp button -->
-<a href="https://wa.me/918853253719?text=Hello%20Shivnayak" target="_blank"
-style="background:#25D366; color:white; padding:10px 20px; border-radius:20px; text-decoration:none;">
-💬 Contact Me on WhatsApp
-</a>
-
-</body>
 </body>
 </html>
