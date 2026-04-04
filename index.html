@@ -38,6 +38,7 @@ header {
   text-align: center;
   padding: 80px 20px;
 }
+
 .btn {
   padding: 10px 20px;
   background: #38bdf8;
@@ -56,6 +57,7 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 20px;
 }
+
 .card {
   background: #1e293b;
   padding: 20px;
@@ -144,6 +146,14 @@ footer {
     <button class="btn">Send</button>
   </form>
 
+  <br>
+
+  <!-- EMAIL BUTTON -->
+  <a href="mailto:shivnayakkashyap40@gmail.com?subject=Contact%20from%20Website&body=Hello%20Shivnayak" 
+  style="background:#3b82f6; color:white; padding:10px 20px; border-radius:20px; text-decoration:none;">
+  📧 Send Email
+  </a>
+
 </div>
 
 <footer>
@@ -154,7 +164,7 @@ footer {
   </a>
 </footer>
 
-<!-- WHATSAPP -->
+<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/918853253719?text=Hello%20Shivnayak" 
    class="whatsapp-float" target="_blank">
    <i class="fab fa-whatsapp"></i>
@@ -168,7 +178,7 @@ function scrollToSection(id){
 document.getElementById("contact-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  emailjs.sendForm("shivnayakkashyap40@gmail.com", "YOUR_TEMPLATE_ID", this)
+  emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
     .then(function() {
       alert("Message Sent Successfully ✅");
     }, function(error) {
