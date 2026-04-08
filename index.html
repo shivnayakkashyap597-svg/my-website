@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <h2 id="typing"></h2>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shivnayak Gaming Portfolio</title>
@@ -10,14 +10,6 @@
 
 <style>
 body {
-  <section id="video">
-  <h2>My Video</h2>
-
-  <iframe width="300" height="200" 
-    src="https://www.youtube.com/embed/https://youtube.com/shorts/cowMuJ3sw0Q?feature=shared"
-    frameborder="0" allowfullscreen>
-  </iframe>
-</section>
   margin: 0;
   font-family: 'Segoe UI';
   background: linear-gradient(135deg,#020617,#0f172a);
@@ -25,7 +17,7 @@ body {
   overflow-x: hidden;
 }
 
-/* PARTICLES BACKGROUND */
+/* PARTICLES */
 #particles-js{
   position: fixed;
   width: 100%;
@@ -52,7 +44,7 @@ header {
   padding: 100px 20px;
 }
 #typing {
-  font-size: 45px;
+  font-size: 40px;
   color: #00f7ff;
   text-shadow: 0 0 20px #00f7ff;
 }
@@ -96,7 +88,7 @@ header {
   border:3px solid #00f7ff;
 }
 
-/* SOCIAL BUTTON */
+/* SOCIAL */
 .social-btn{
   display:inline-block;
   margin:10px;
@@ -106,10 +98,12 @@ header {
   color:black;
   text-decoration:none;
   font-weight:bold;
-  transition:0.3s;
 }
-.social-btn:hover{
-  box-shadow:0 0 20px #00f7ff;
+
+/* VIDEO */
+.video iframe {
+  border-radius: 10px;
+  margin-top: 15px;
 }
 
 /* GAME */
@@ -145,8 +139,7 @@ header {
 
 <nav>
   <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
+  <a href="#video">Video</a>
 </nav>
 
 <header>
@@ -155,6 +148,7 @@ header {
   <button class="btn" onclick="startGame()">Play Game 🎮</button>
 </header>
 
+<!-- ABOUT -->
 <div class="section" id="about">
   <div class="card">
     <img src="myphoto.jpg" class="profile-img"><br><br>
@@ -163,22 +157,22 @@ header {
 
     <br><br>
 
-    <!-- SOCIAL LINKS -->
-    <a href="mailto:yourgmail@gmail.com?subject=Hello Shivnayak&body=Hi, mujhe aapse contact karna hai" class="social-btn">
-      <i class="fas fa-envelope"></i> Gmail
-    </a>
-
-    <a href="sms:+918853253719?body=Hi Shivnayak" class="social-btn">
-      <i class="fas fa-sms"></i> SMS
-    </a>
-
     <a href="https://instagram.com/smil__e46" target="_blank" class="social-btn">
-      <i class="fab fa-instagram"></i> Instagram
+      Instagram
     </a>
-
   </div>
 </div>
 
+<!-- VIDEO (FIXED) -->
+<div class="section video" id="video">
+  <h2>My Video 🎬</h2>
+  <iframe width="300" height="200"
+    src="https://www.youtube.com/embed/cowMuJ3sw0Q"
+    frameborder="0" allowfullscreen>
+  </iframe>
+</div>
+
+<!-- GAME -->
 <div id="game">
   <div class="box" id="box"></div>
   <h2>Score: <span id="score">0</span></h2>
@@ -189,33 +183,32 @@ header {
 </footer>
 
 <a href="https://wa.me/918853253719" class="whatsapp-float">
-<i class="fab fa-whatsapp"></i>
+WhatsApp
 </a>
 
-<!-- SOUND -->
 <audio id="sound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <script>
-// typing
+// TYPING (single version FIXED)
 let text="🔥 Shivnayak Gaming Zone 🔥";
 let i=0;
 function typing(){
  if(i<text.length){
- document.getElementById("typing").innerHTML+=text.charAt(i);
- i++;
- setTimeout(typing,80);
+  document.getElementById("typing").innerHTML+=text.charAt(i);
+  i++;
+  setTimeout(typing,80);
  }
 }
 typing();
 
-// particles
+// PARTICLES
 particlesJS("particles-js",{
  particles:{number:{value:80},color:{value:"#00f7ff"},size:{value:3},move:{speed:3}}
 });
 
-// game
+// GAME
 let score=0;
 function startGame(){
  document.getElementById("game").style.display="block";
@@ -235,18 +228,6 @@ document.getElementById("box").onclick=function(){
  moveBox();
 };
 </script>
-<script>
-let text = "I am a Gamer | Developer | YouTuber";
-let i = 0;
 
-function typing() {
-  if(i < text.length){
-    document.getElementById("typing").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typing, 50);
-  }
-}
-typing();
-</script>
 </body>
 </html>
