@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <h2 id="typing"></h2>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shivnayak Gaming Portfolio</title>
@@ -234,6 +235,18 @@ document.getElementById("box").onclick=function(){
  moveBox();
 };
 </script>
+<script>
+let text = "I am a Gamer | Developer | YouTuber";
+let i = 0;
 
+function typing() {
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 50);
+  }
+}
+typing();
+</script>
 </body>
 </html>
