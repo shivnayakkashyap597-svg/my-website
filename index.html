@@ -9,62 +9,36 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
-  <section id="skills">
-  <h2>My Skills</h2>
-
-  <div class="skills-container">
-    <div class="skill">
-      <p>HTML</p>
-      <div class="bar"><div class="fill" style="width:90%"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>CSS</p>
-      <div class="bar"><div class="fill" style="width:80%"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>JavaScript</p>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>Gaming</p>
-      <div class="bar"><div class="fill" style="width:85%"></div></div>
-    </div>
-  </div>
-</section>
 body {
-  <section id="skills">
-  <h2>My Skills</h2>
-
-  <div class="skills-container">
-    <div class="skill">
-      <p>HTML</p>
-      <div class="bar"><div class="fill" style="width:90%"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>CSS</p>
-      <div class="bar"><div class="fill" style="width:80%"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>JavaScript</p>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>Gaming</p>
-      <div class="bar"><div class="fill" style="width:85%"></div></div>
-    </div>
-  </div>
-</section>
   margin: 0;
   font-family: 'Segoe UI';
   background: linear-gradient(135deg,#020617,#0f172a);
   color: white;
   overflow-x: hidden;
+}
+
+/* SKILLS */
+#skills {
+  padding: 50px;
+  text-align: center;
+}
+.skills-container {
+  max-width: 600px;
+  margin: auto;
+}
+.skill {
+  margin: 20px 0;
+  text-align: left;
+}
+.bar {
+  background: #333;
+  height: 10px;
+  border-radius: 5px;
+}
+.fill {
+  background: #00f7ff;
+  height: 10px;
+  border-radius: 5px;
 }
 
 /* PARTICLES */
@@ -189,6 +163,7 @@ header {
 
 <nav>
   <a href="#about">About</a>
+  <a href="#skills">Skills</a>
   <a href="#video">Video</a>
 </nav>
 
@@ -213,7 +188,34 @@ header {
   </div>
 </div>
 
-<!-- VIDEO (FIXED) -->
+<!-- SKILLS -->
+<div class="section" id="skills">
+  <h2>My Skills 🚀</h2>
+
+  <div class="skills-container">
+    <div class="skill">
+      <p>HTML</p>
+      <div class="bar"><div class="fill" style="width:90%"></div></div>
+    </div>
+
+    <div class="skill">
+      <p>CSS</p>
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+    </div>
+
+    <div class="skill">
+      <p>JavaScript</p>
+      <div class="bar"><div class="fill" style="width:70%"></div></div>
+    </div>
+
+    <div class="skill">
+      <p>Gaming</p>
+      <div class="bar"><div class="fill" style="width:85%"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO -->
 <div class="section video" id="video">
   <h2>My Video 🎬</h2>
   <iframe width="300" height="200"
@@ -241,7 +243,6 @@ WhatsApp
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <script>
-// TYPING (single version FIXED)
 let text="🔥 Shivnayak Gaming Zone 🔥";
 let i=0;
 function typing(){
@@ -253,12 +254,10 @@ function typing(){
 }
 typing();
 
-// PARTICLES
 particlesJS("particles-js",{
  particles:{number:{value:80},color:{value:"#00f7ff"},size:{value:3},move:{speed:3}}
 });
 
-// GAME
 let score=0;
 function startGame(){
  document.getElementById("game").style.display="block";
