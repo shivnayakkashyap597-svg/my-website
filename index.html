@@ -11,6 +11,40 @@
 
 <style>
 .card {
+  .video-card {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 15px;
+  max-width: 350px;
+  margin: 20px auto;
+  position: relative;
+  transition: 0.4s;
+}
+
+/* Glow Border */
+.video-card::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 15px;
+  background: linear-gradient(270deg, #00f7ff, #ff00ff, #00f7ff);
+  background-size: 400% 400%;
+  z-index: -1;
+  filter: blur(10px);
+  animation: borderGlow 6s linear infinite;
+}
+
+/* Hover Effect */
+.video-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00f7ff;
+}
+
+/* Title Glow */
+.video h2 {
+  color: #00f7ff;
+  text-shadow: 0 0 15px #00f7ff;
+}
   position: relative;
   z-index: 1;
 }
@@ -189,8 +223,8 @@ header {
 
 /* VIDEO */
 .video iframe {
-  border-radius: 20px;
-  margin-top: 30px;
+  border-radius: 10px;
+  margin-top: 15px;
 }
 
 /* GAME */
@@ -306,22 +340,21 @@ header {
 </div>
 
 <!-- VIDEO -->
-```html
+  ```html id="k9x3pd"
 <div class="section video" id="video">
-  <h2>My project 🎬</h2>
+  <h2>🚀 My Project 🎬</h2>
 
-  <blockquote class="instagram-media" 
-    data-instgrm-permalink="https://www.instagram.com/reel/DOZ7Khticdq/" 
-    data-instgrm-version="14"
-    style="max-width:300px; margin:auto;">
-  </blockquote>
+  <div class="video-card">
+    <blockquote class="instagram-media" 
+      data-instgrm-permalink="https://www.instagram.com/reel/DOZ7Khticdq/" 
+      data-instgrm-version="14">
+    </blockquote>
+  </div>
 
 </div>
 
 <script async src="//www.instagram.com/embed.js"></script>
 ```
-
-
 <!-- GAME -->
 <div id="game">
   <div class="box" id="box"></div>
