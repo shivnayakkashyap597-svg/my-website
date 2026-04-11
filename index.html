@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -271,6 +272,7 @@ header { text-align: center; padding: 100px 20px; }
 <div id="game">
   <div class="box" id="box"></div>
   <h2>Score: <span id="score">0</span></h2>
+  <p>Time Left: <span id="time">30</span>s</p>
 </div>
 
 <footer style="padding:20px;text-align:center;">
@@ -299,25 +301,59 @@ typing();
 
 particlesJS("particles-js",{particles:{number:{value:80},color:{value:"#00f7ff"},size:{value:3},move:{speed:3}}});
 
-let score=0;
+let score = 0;
+let time = 30;
+let gameRunning = false;
+
 function startGame(){
  document.getElementById("game").style.display="block";
+ score = 0;
+ time = 30;
+ gameRunning = true;
+
+ document.getElementById("score").innerText = score;
+ document.getElementById("time").innerText = time;
+
  moveBox();
+
+ let timer = setInterval(() => {
+   time--;
+   document.getElementById("time").innerText = time;
+
+   if(time <= 0){
+     clearInterval(timer);
+     gameRunning = false;
+     alert("⏰ Time Over! Score: " + score);
+   }
+ },1000);
 }
 
 function moveBox(){
+ if(!gameRunning) return;
+
  let box=document.getElementById("box");
- box.style.left=Math.random()*window.innerWidth+"px";
- box.style.top=Math.random()*window.innerHeight+"px";
+ box.style.left=Math.random()*(window.innerWidth-60)+"px";
+ box.style.top=Math.random()*(window.innerHeight-60)+"px";
 }
 
-document.getElementById("box").onclick=function(){
+document.getElementById("box").onclick=function(e){
+ if(!gameRunning) return;
+
+ e.stopPropagation();
  score++;
  document.getElementById("score").innerText=score;
  document.getElementById("sound").play();
  moveBox();
 };
+
+document.body.onclick=function(){
+ if(gameRunning){
+   alert("❌ Miss Click! Game Over\nScore: " + score);
+   gameRunning = false;
+ }
+};
 </script>
 
 </body>
 </html>
+```
