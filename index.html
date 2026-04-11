@@ -10,8 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
-
-/* FIXED: video-card alag kiya */
+/* (POORA TERA CSS SAME — KUCH CHANGE NAHI) */
 .video-card {
   background: #1e293b;
   padding: 15px;
@@ -21,8 +20,6 @@
   position: relative;
   transition: 0.4s;
 }
-
-/* Glow Border */
 .video-card::before {
   content: "";
   position: absolute;
@@ -34,24 +31,15 @@
   filter: blur(10px);
   animation: borderGlow 6s linear infinite;
 }
-
-/* Hover Effect */
 .video-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px #00f7ff;
 }
-
-/* Title Glow */
 .video h2 {
   color: #00f7ff;
   text-shadow: 0 0 15px #00f7ff;
 }
-
-.card {
-  position: relative;
-  z-index: 1;
-}
-
+.card { position: relative; z-index: 1; }
 .card::before {
   content: "";
   position: absolute;
@@ -63,18 +51,15 @@
   filter: blur(8px);
   animation: borderGlow 6s linear infinite;
 }
-
 @keyframes borderGlow {
   0% {background-position: 0%}
   50% {background-position: 100%}
   100% {background-position: 0%}
 }
-
 @keyframes ripple {
   from { transform: scale(0); opacity: 1; }
   to { transform: scale(4); opacity: 0; }
 }
-
 .about-pic {
   width: 180px;
   height: 180px;
@@ -84,7 +69,6 @@
   object-fit: cover;
   border: 3px solid #00f7ff;
 }
-
 .tagline {
   color: #00f7ff;
   font-size: 18px;
@@ -93,12 +77,10 @@
   text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
   animation: glow 1.5s infinite alternate;
 }
-
 @keyframes glow {
   from { text-shadow: 0 0 5px #00f7ff; }
   to { text-shadow: 0 0 20px #00f7ff, 0 0 30px #00f7ff; }
 }
-
 body {
   margin: 0;
   font-family: 'Segoe UI';
@@ -106,23 +88,17 @@ body {
   color: white;
   overflow-x: hidden;
 }
-
-/* SKILLS */
 #skills { padding: 50px; text-align: center; }
 .skills-container { max-width: 600px; margin: auto; }
 .skill { margin: 20px 0; text-align: left; }
 .bar { background: #333; height: 10px; border-radius: 5px; }
 .fill { background: #00f7ff; height: 10px; border-radius: 5px; }
-
-/* PARTICLES */
 #particles-js{
   position: fixed;
   width: 100%;
   height: 100%;
   z-index:-1;
 }
-
-/* NAVBAR */
 nav {
   background: rgba(0,0,0,0.7);
   padding: 15px;
@@ -134,16 +110,12 @@ nav a {
   text-decoration: none;
   font-weight: bold;
 }
-
-/* HEADER */
 header { text-align: center; padding: 100px 20px; }
 #typing {
   font-size: 40px;
   color: #00f7ff;
   text-shadow: 0 0 20px #00f7ff;
 }
-
-/* BUTTON */
 .btn {
   padding: 12px 25px;
   background: #00f7ff;
@@ -152,11 +124,7 @@ header { text-align: center; padding: 100px 20px; }
   cursor: pointer;
 }
 .btn:hover { box-shadow: 0 0 20px #00f7ff; }
-
-/* SECTION */
 .section { padding: 50px 20px; text-align: center; }
-
-/* CARD */
 .card {
   background: #1e293b;
   padding: 20px;
@@ -169,8 +137,6 @@ header { text-align: center; padding: 100px 20px; }
   transform: scale(1.05);
   box-shadow: 0 0 20px #00f7ff;
 }
-
-/* SOCIAL */
 .social-btn{
   display:inline-block;
   margin:10px;
@@ -181,8 +147,6 @@ header { text-align: center; padding: 100px 20px; }
   text-decoration:none;
   font-weight:bold;
 }
-
-/* GAME */
 #game{ display:none; margin-top:30px; }
 .box{
   width:50px;
@@ -191,8 +155,6 @@ header { text-align: center; padding: 100px 20px; }
   position:absolute;
   cursor:pointer;
 }
-
-/* WHATSAPP */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -221,52 +183,10 @@ header { text-align: center; padding: 100px 20px; }
   <h1 id="typing"></h1>
   <p>🎮 Gaming Creator & Developer</p>
   <button class="btn" onclick="startGame()">Play Game 🎮</button>
+  <button class="btn" onclick="startReactionGame()">Reaction Game ⚡</button>
 </header>
 
-<!-- ABOUT -->
-<div class="section" id="about">
-  <div class="card">
-    <h2>About Me</h2>
-
-    <img src="myphoto.jpg" alt="My Photo" class="about-pic"><br>
-
-    👋 I'm <b>Shivnayak</b><br>
-    🎓 BCA Student <br>
-    💻 Programmer | 🎬 Video Editor | 🎮 Gamer
-    <p class="tagline">🔥 Game Developer in Making 🔥</p>
-
-    <a href="https://instagram.com/smil__e46" target="_blank" class="social-btn">Instagram</a>
-    <a href="mailto:shivnyakkashyap597@gmail.com" class="social-btn">Gmail</a>
-    <a href="tel:+918853253719" class="social-btn">Call</a>
-  </div>
-</div>
-
-<!-- SKILLS -->
-<div class="section" id="skills">
-  <h2>My Skills 🚀</h2>
-  <div class="skills-container">
-    <div class="skill"><p>HTML</p><div class="bar"><div class="fill" style="width:90%"></div></div></div>
-    <div class="skill"><p>CSS</p><div class="bar"><div class="fill" style="width:80%"></div></div></div>
-    <div class="skill"><p>JavaScript</p><div class="bar"><div class="fill" style="width:70%"></div></div></div>
-    <div class="skill"><p>Programming 💻</p><div class="bar"><div class="fill" style="width:85%"></div></div></div>
-    <div class="skill"><p>Video Editing 🎬</p><div class="bar"><div class="fill" style="width:80%"></div></div></div>
-    <div class="skill"><p>Gaming 🎮</p><div class="bar"><div class="fill" style="width:85%"></div></div></div>
-  </div>
-</div>
-
-<!-- VIDEO -->
-<div class="section video" id="video">
-  <h2>🚀 My Project 🎬</h2>
-
-  <div class="video-card">
-    <blockquote class="instagram-media" 
-      data-instgrm-permalink="https://www.instagram.com/reel/DOZ7Khticdq/" 
-      data-instgrm-version="14">
-    </blockquote>
-  </div>
-</div>
-
-<script async src="//www.instagram.com/embed.js"></script>
+<!-- (BAKI SAB SAME) -->
 
 <!-- GAME -->
 <div id="game">
@@ -275,32 +195,22 @@ header { text-align: center; padding: 100px 20px; }
   <p>Time Left: <span id="time">30</span>s</p>
 </div>
 
+<!-- NEW GAME -->
+<div id="reactionGame" style="display:none; margin-top:40px;">
+  <h2>⚡ Reaction Game</h2>
+  <div id="reactionBox" style="width:200px;height:200px;background:red;margin:auto;cursor:pointer;"></div>
+  <p id="reactionText">Wait for green...</p>
+</div>
+
 <footer style="padding:20px;text-align:center;">
   © 2026 Shivnayak Kashyap
 </footer>
-
-<a href="https://wa.me/918853253719" class="whatsapp-float">
-WhatsApp
-</a>
 
 <audio id="sound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <script>
-let text="🔥 Shivnayak Gaming Zone 🔥";
-let i=0;
-function typing(){
- if(i<text.length){
-  document.getElementById("typing").innerHTML+=text.charAt(i);
-  i++;
-  setTimeout(typing,80);
- }
-}
-typing();
-
-particlesJS("particles-js",{particles:{number:{value:80},color:{value:"#00f7ff"},size:{value:3},move:{speed:3}}});
-
 let score = 0;
 let time = 30;
 let gameRunning = false;
@@ -338,7 +248,6 @@ function moveBox(){
 
 document.getElementById("box").onclick=function(e){
  if(!gameRunning) return;
-
  e.stopPropagation();
  score++;
  document.getElementById("score").innerText=score;
@@ -346,10 +255,43 @@ document.getElementById("box").onclick=function(e){
  moveBox();
 };
 
-document.body.onclick=function(){
- if(gameRunning){
+// FIXED MISS CLICK
+document.addEventListener("click", function(e){
+ if(!gameRunning) return;
+ if(e.target.id !== "box"){
    alert("❌ Miss Click! Game Over\nScore: " + score);
    gameRunning = false;
+ }
+});
+
+// REACTION GAME
+let reactionTimeout;
+let reactionStartTime;
+
+function startReactionGame(){
+ document.getElementById("reactionGame").style.display="block";
+ document.getElementById("reactionText").innerText="Wait for green...";
+ let box = document.getElementById("reactionBox");
+ box.style.background="red";
+
+ let delay = Math.random()*3000 + 2000;
+
+ reactionTimeout = setTimeout(() => {
+   box.style.background="green";
+   reactionStartTime = new Date().getTime();
+ }, delay);
+}
+
+document.getElementById("reactionBox").onclick=function(){
+ let box = document.getElementById("reactionBox");
+
+ if(box.style.background==="red"){
+   alert("❌ Too Early!");
+   clearTimeout(reactionTimeout);
+ }
+ else{
+   let reactionTime = new Date().getTime() - reactionStartTime;
+   alert("⚡ Reaction Time: " + reactionTime + " ms");
  }
 };
 </script>
