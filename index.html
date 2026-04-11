@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shivnayak Gaming Portfolio</title>
@@ -9,7 +10,37 @@
 
 <style>
 
-/* PROFILE IMAGE */
+/* GLOW CARD */
+.card {
+  position: relative;
+  z-index: 1;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 15px;
+  background: linear-gradient(270deg, #00f7ff, #ff00ff, #00f7ff);
+  background-size: 400% 400%;
+  z-index: -1;
+  filter: blur(8px);
+  animation: borderGlow 6s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% {background-position: 0%}
+  50% {background-position: 100%}
+  100% {background-position: 0%}
+}
+
+/* RIPPLE */
+@keyframes ripple {
+  from { transform: scale(0); opacity: 1; }
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* PROFILE */
 .about-pic {
   width: 180px;
   height: 180px;
@@ -20,7 +51,6 @@
   border: 3px solid #00f7ff;
 }
 
-/* TAGLINE */
 .tagline {
   color: #00f7ff;
   font-size: 18px;
@@ -42,41 +72,42 @@ body {
   background: linear-gradient(135deg,#020617,#0f172a);
   color: white;
   overflow-x: hidden;
-  cursor: crosshair;
 }
 
-/* CARD (3D + NEON) */
-.card {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 15px;
-  max-width: 700px;
-  margin: auto;
-  transition: transform 0.2s ease, box-shadow 0.2s;
-  transform-style: preserve-3d;
-  position: relative;
+/* SKILLS */
+#skills { padding: 50px; text-align: center; }
+.skills-container { max-width: 600px; margin: auto; }
+.skill { margin: 20px 0; text-align: left; }
+.bar { background: #333; height: 10px; border-radius: 5px; }
+.fill { background: #00f7ff; height: 10px; border-radius: 5px; }
+
+/* PARTICLES */
+#particles-js{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index:-1;
 }
 
-.card:hover {
-  box-shadow: 0 0 30px #00f7ff;
+/* NAV */
+nav {
+  background: rgba(0,0,0,0.7);
+  padding: 15px;
+  text-align: center;
+}
+nav a {
+  color: #00f7ff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border-radius: 15px;
-  background: linear-gradient(270deg, #00f7ff, #ff00ff, #00f7ff);
-  background-size: 400% 400%;
-  z-index: -1;
-  filter: blur(8px);
-  animation: borderGlow 6s linear infinite;
-}
-
-@keyframes borderGlow {
-  0% {background-position: 0%}
-  50% {background-position: 100%}
-  100% {background-position: 0%}
+/* HEADER */
+header { text-align: center; padding: 100px 20px; }
+#typing {
+  font-size: 40px;
+  color: #00f7ff;
+  text-shadow: 0 0 20px #00f7ff;
 }
 
 /* BUTTON */
@@ -86,24 +117,28 @@ body {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
+}
+.btn:hover { box-shadow: 0 0 20px #00f7ff; }
+
+/* SECTION */
+.section { padding: 50px 20px; text-align: center; }
+
+/* CARD */
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 700px;
+  margin: auto;
   transition: 0.3s;
 }
-
-.btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff;
-}
-
-/* RIPPLE */
-@keyframes ripple {
-  from { transform: scale(0); opacity: 1; }
-  to { transform: scale(4); opacity: 0; }
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00f7ff;
 }
 
 /* SOCIAL */
-.social-btn {
+.social-btn{
   display:inline-block;
   margin:10px;
   padding:10px 20px;
@@ -112,26 +147,19 @@ body {
   color:black;
   text-decoration:none;
   font-weight:bold;
-  transition: 0.3s;
 }
 
-.social-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #00f7ff;
+/* GAME */
+#game{ display:none; margin-top:30px; }
+.box{
+  width:50px;
+  height:50px;
+  background:red;
+  position:absolute;
+  cursor:pointer;
 }
 
-/* OTHER */
-.section { padding: 50px 20px; text-align: center; }
-nav { background: rgba(0,0,0,0.7); padding: 15px; text-align: center; }
-nav a { color: #00f7ff; margin: 0 15px; text-decoration: none; font-weight: bold; }
-header { text-align: center; padding: 100px 20px; }
-#typing { font-size: 40px; color: #00f7ff; text-shadow: 0 0 20px #00f7ff; }
-
-#particles-js { position: fixed; width: 100%; height: 100%; z-index:-1; }
-
-.bar { background:#333; height:10px; border-radius:5px; }
-.fill { background:#00f7ff; height:10px; border-radius:5px; }
-
+/* WHATSAPP */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -140,6 +168,7 @@ header { text-align: center; padding: 100px 20px; }
   padding: 15px;
   border-radius: 50%;
   color: white;
+  font-size: 22px;
 }
 
 </style>
@@ -152,6 +181,7 @@ header { text-align: center; padding: 100px 20px; }
 <nav>
   <a href="#about">About</a>
   <a href="#skills">Skills</a>
+  <a href="#video">Video</a>
 </nav>
 
 <header>
@@ -173,13 +203,21 @@ header { text-align: center; padding: 100px 20px; }
     <p class="tagline">🔥 Game Developer in Making 🔥</p>
 
     <a href="https://instagram.com/smil__e46" target="_blank" class="social-btn">Instagram</a>
+    <a href="mailto:shivnyakkashyap597@gmail.com" class="social-btn">Gmail</a>
+    <a href="tel:+918853253719" class="social-btn">Call</a>
   </div>
 </div>
+
+<div id="game">
+  <div class="box" id="box"></div>
+  <h2>Score: <span id="score">0</span></h2>
+</div>
+
+<audio id="sound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <script>
-// typing
 let text="🔥 Shivnayak Gaming Zone 🔥";
 let i=0;
 function typing(){
@@ -191,36 +229,66 @@ function typing(){
 }
 typing();
 
-// particles
 particlesJS("particles-js",{particles:{number:{value:80},color:{value:"#00f7ff"},size:{value:3},move:{speed:3}}});
 
-// 3D tilt
+let score=0;
+function startGame(){
+ document.getElementById("game").style.display="block";
+ moveBox();
+}
+
+function moveBox(){
+ let box=document.getElementById("box");
+ box.style.left=Math.random()*window.innerWidth+"px";
+ box.style.top=Math.random()*window.innerHeight+"px";
+}
+
+document.getElementById("box").onclick=function(){
+ score++;
+ document.getElementById("score").innerText=score;
+ document.getElementById("sound").play();
+ moveBox();
+};
+</script>
+
+<script>
+// CARD 3D EFFECT
 const card = document.querySelector(".card");
-card.addEventListener("mousemove", (e)=>{
- const rect = card.getBoundingClientRect();
- const x=(e.clientX-rect.left)/rect.width;
- const y=(e.clientY-rect.top)/rect.height;
- card.style.transform=`rotateX(${-(y-0.5)*20}deg) rotateY(${(x-0.5)*20}deg)`;
-});
-card.addEventListener("mouseleave", ()=>{
- card.style.transform="rotateX(0) rotateY(0)";
+
+card.addEventListener("mousemove", (e) => {
+  const rect = card.getBoundingClientRect();
+  const x = (e.clientX - rect.left) / rect.width;
+  const y = (e.clientY - rect.top) / rect.height;
+
+  const rotateX = (y - 0.5) * 20;
+  const rotateY = (x - 0.5) * 20;
+
+  card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
 });
 
-// ripple
-document.querySelectorAll(".btn").forEach(btn=>{
- btn.addEventListener("click",function(e){
-  const span=document.createElement("span");
-  span.style.position="absolute";
-  span.style.width=span.style.height="100px";
-  span.style.background="rgba(255,255,255,0.3)";
-  span.style.borderRadius="50%";
-  span.style.left=e.offsetX+"px";
-  span.style.top=e.offsetY+"px";
-  span.style.transform="translate(-50%,-50%)";
-  span.style.animation="ripple 0.6s linear";
-  this.appendChild(span);
-  setTimeout(()=>span.remove(),600);
- });
+card.addEventListener("mouseleave", () => {
+  card.style.transform = "rotateX(0) rotateY(0)";
+});
+</script>
+
+<script>
+// RIPPLE EFFECT
+document.querySelectorAll(".btn").forEach(button => {
+  button.addEventListener("click", function(e) {
+    const circle = document.createElement("span");
+    circle.style.position = "absolute";
+    circle.style.width = circle.style.height = "100px";
+    circle.style.background = "rgba(255,255,255,0.3)";
+    circle.style.borderRadius = "50%";
+    circle.style.left = e.offsetX + "px";
+    circle.style.top = e.offsetY + "px";
+    circle.style.transform = "translate(-50%, -50%)";
+    circle.style.pointerEvents = "none";
+    circle.style.animation = "ripple 0.6s linear";
+
+    this.appendChild(circle);
+    setTimeout(() => circle.remove(), 600);
+  });
 });
 </script>
 
