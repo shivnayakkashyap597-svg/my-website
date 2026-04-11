@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shivnayak Gaming Portfolio</title>
@@ -9,7 +8,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
-  .about-pic {
+
+/* PROFILE IMAGE */
+.about-pic {
   width: 180px;
   height: 180px;
   border-radius: 50%;
@@ -19,6 +20,7 @@
   border: 3px solid #00f7ff;
 }
 
+/* TAGLINE */
 .tagline {
   color: #00f7ff;
   font-size: 18px;
@@ -29,76 +31,52 @@
 }
 
 @keyframes glow {
-  from {
-    text-shadow: 0 0 5px #00f7ff;
-  }
-  to {
-    text-shadow: 0 0 20px #00f7ff, 0 0 30px #00f7ff;
-  }
+  from { text-shadow: 0 0 5px #00f7ff; }
+  to { text-shadow: 0 0 20px #00f7ff, 0 0 30px #00f7ff; }
 }
+
+/* BODY */
 body {
-  
   margin: 0;
   font-family: 'Segoe UI';
   background: linear-gradient(135deg,#020617,#0f172a);
   color: white;
   overflow-x: hidden;
+  cursor: crosshair;
 }
 
-/* SKILLS */
-#skills {
-  padding: 50px;
-  text-align: center;
-}
-.skills-container {
-  max-width: 600px;
+/* CARD (3D + NEON) */
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 700px;
   margin: auto;
-}
-.skill {
-  margin: 20px 0;
-  text-align: left;
-}
-.bar {
-  background: #333;
-  height: 10px;
-  border-radius: 5px;
-}
-.fill {
-  background: #00f7ff;
-  height: 10px;
-  border-radius: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s;
+  transform-style: preserve-3d;
+  position: relative;
 }
 
-/* PARTICLES */
-#particles-js{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index:-1;
+.card:hover {
+  box-shadow: 0 0 30px #00f7ff;
 }
 
-/* NAVBAR */
-nav {
-  background: rgba(0,0,0,0.7);
-  padding: 15px;
-  text-align: center;
-}
-nav a {
-  color: #00f7ff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 15px;
+  background: linear-gradient(270deg, #00f7ff, #ff00ff, #00f7ff);
+  background-size: 400% 400%;
+  z-index: -1;
+  filter: blur(8px);
+  animation: borderGlow 6s linear infinite;
 }
 
-/* HEADER */
-header {
-  text-align: center;
-  padding: 100px 20px;
-}
-#typing {
-  font-size: 40px;
-  color: #00f7ff;
-  text-shadow: 0 0 20px #00f7ff;
+@keyframes borderGlow {
+  0% {background-position: 0%}
+  50% {background-position: 100%}
+  100% {background-position: 0%}
 }
 
 /* BUTTON */
@@ -108,40 +86,24 @@ header {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-}
-.btn:hover {
-  box-shadow: 0 0 20px #00f7ff;
-}
-
-/* SECTION */
-.section {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-/* CARD */
-.card {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 15px;
-  max-width: 700px;
-  margin: auto;
+  position: relative;
+  overflow: hidden;
   transition: 0.3s;
 }
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #00f7ff;
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff;
 }
 
-/* PROFILE */
-.profile-img {
-  width:130px;
-  border-radius:50%;
-  border:3px solid #00f7ff;
+/* RIPPLE */
+@keyframes ripple {
+  from { transform: scale(0); opacity: 1; }
+  to { transform: scale(4); opacity: 0; }
 }
 
 /* SOCIAL */
-.social-btn{
+.social-btn {
   display:inline-block;
   margin:10px;
   padding:10px 20px;
@@ -150,28 +112,26 @@ header {
   color:black;
   text-decoration:none;
   font-weight:bold;
+  transition: 0.3s;
 }
 
-/* VIDEO */
-.video iframe {
-  border-radius: 10px;
-  margin-top: 15px;
+.social-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00f7ff;
 }
 
-/* GAME */
-#game{
-  display:none;
-  margin-top:30px;
-}
-.box{
-  width:50px;
-  height:50px;
-  background:red;
-  position:absolute;
-  cursor:pointer;
-}
+/* OTHER */
+.section { padding: 50px 20px; text-align: center; }
+nav { background: rgba(0,0,0,0.7); padding: 15px; text-align: center; }
+nav a { color: #00f7ff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+header { text-align: center; padding: 100px 20px; }
+#typing { font-size: 40px; color: #00f7ff; text-shadow: 0 0 20px #00f7ff; }
 
-/* WHATSAPP */
+#particles-js { position: fixed; width: 100%; height: 100%; z-index:-1; }
+
+.bar { background:#333; height:10px; border-radius:5px; }
+.fill { background:#00f7ff; height:10px; border-radius:5px; }
+
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -180,8 +140,8 @@ header {
   padding: 15px;
   border-radius: 50%;
   color: white;
-  font-size: 22px;
 }
+
 </style>
 </head>
 
@@ -192,7 +152,6 @@ header {
 <nav>
   <a href="#about">About</a>
   <a href="#skills">Skills</a>
-  <a href="#video">Video</a>
 </nav>
 
 <header>
@@ -201,102 +160,26 @@ header {
   <button class="btn" onclick="startGame()">Play Game 🎮</button>
 </header>
 
-<!-- ABOUT -->
-
-   <div class="section" id="about">
+<div class="section" id="about">
   <div class="card">
-    
     <h2>About Me</h2>
 
-    <img src="myphoto.jpg" alt="My Photo" class="about-pic"><br>
+    <img src="myphoto.jpg" class="about-pic">
 
     👋 I'm <b>Shivnayak</b><br>
     🎓 BCA Student <br>
     💻 Programmer | 🎬 Video Editor | 🎮 Gamer
-   <p class="tagline">🔥 Game Developer in Making 🔥</p>
-    <br><br>
 
-    <a href="https://instagram.com/smil__e46" target="_blank" class="social-btn">
-      Instagram
-    </a>
+    <p class="tagline">🔥 Game Developer in Making 🔥</p>
 
-    <a href="mailto:shivnyakkashyap597@gmail.com" class="social-btn">
-      <i class="fa-solid fa-envelope"></i> Gmail
-    </a>
-
-    <a href="tel:+918853253719" class="social-btn">
-      <i class="fa-solid fa-phone"></i> Call
-    </a>
-
+    <a href="https://instagram.com/smil__e46" target="_blank" class="social-btn">Instagram</a>
   </div>
 </div>
-<!-- SKILLS -->
-<div class="section" id="skills">
-  <h2>My Skills 🚀</h2>
-
-  <div class="skills-container">
-    
-    <div class="skill">
-      <p>HTML</p>
-      <div class="bar"><div class="fill" style="width:90%"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>CSS</p>
-      <div class="bar"><div class="fill" style="width:80%"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>JavaScript</p>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>Programming 💻</p>
-      <div class="bar"><div class="fill" style="width:85%"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>Video Editing 🎬</p>
-      <div class="bar"><div class="fill" style="width:80%"></div></div>
-    </div>
-
-    <div class="skill">
-      <p>Gaming 🎮</p>
-      <div class="bar"><div class="fill" style="width:85%"></div></div>
-    </div>
-
-  </div>
-</div>
-
-<!-- VIDEO -->
-<div class="section video" id="video">
-  <h2>My Video 🎬</h2>
-  <iframe width="300" height="200"
-    src="https://www.youtube.com/embed/cowMuJ3sw0Q"
-    frameborder="0" allowfullscreen>
-  </iframe>
-</div>
-
-<!-- GAME -->
-<div id="game">
-  <div class="box" id="box"></div>
-  <h2>Score: <span id="score">0</span></h2>
-</div>
-
-<footer style="padding:20px;text-align:center;">
-  © 2026 Shivnayak Kashyap
-</footer>
-
-<a href="https://wa.me/918853253719" class="whatsapp-float">
-WhatsApp
-</a>
-
-<audio id="sound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <script>
+// typing
 let text="🔥 Shivnayak Gaming Zone 🔥";
 let i=0;
 function typing(){
@@ -308,28 +191,37 @@ function typing(){
 }
 typing();
 
-particlesJS("particles-js",{
- particles:{number:{value:80},color:{value:"#00f7ff"},size:{value:3},move:{speed:3}}
+// particles
+particlesJS("particles-js",{particles:{number:{value:80},color:{value:"#00f7ff"},size:{value:3},move:{speed:3}}});
+
+// 3D tilt
+const card = document.querySelector(".card");
+card.addEventListener("mousemove", (e)=>{
+ const rect = card.getBoundingClientRect();
+ const x=(e.clientX-rect.left)/rect.width;
+ const y=(e.clientY-rect.top)/rect.height;
+ card.style.transform=`rotateX(${-(y-0.5)*20}deg) rotateY(${(x-0.5)*20}deg)`;
+});
+card.addEventListener("mouseleave", ()=>{
+ card.style.transform="rotateX(0) rotateY(0)";
 });
 
-let score=0;
-function startGame(){
- document.getElementById("game").style.display="block";
- moveBox();
-}
-
-function moveBox(){
- let box=document.getElementById("box");
- box.style.left=Math.random()*window.innerWidth+"px";
- box.style.top=Math.random()*window.innerHeight+"px";
-}
-
-document.getElementById("box").onclick=function(){
- score++;
- document.getElementById("score").innerText=score;
- document.getElementById("sound").play();
- moveBox();
-};
+// ripple
+document.querySelectorAll(".btn").forEach(btn=>{
+ btn.addEventListener("click",function(e){
+  const span=document.createElement("span");
+  span.style.position="absolute";
+  span.style.width=span.style.height="100px";
+  span.style.background="rgba(255,255,255,0.3)";
+  span.style.borderRadius="50%";
+  span.style.left=e.offsetX+"px";
+  span.style.top=e.offsetY+"px";
+  span.style.transform="translate(-50%,-50%)";
+  span.style.animation="ripple 0.6s linear";
+  this.appendChild(span);
+  setTimeout(()=>span.remove(),600);
+ });
+});
 </script>
 
 </body>
